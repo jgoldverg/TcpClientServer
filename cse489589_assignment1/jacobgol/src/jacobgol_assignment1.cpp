@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	char mode = *argv[1];
 	int portNumber = atoi(argv[2]);
 	cout << programName << "\n";
-	cout << "The server mode is " + mode;
-	cout << "The port number passed in is " + std::to_string(portNumber);
+	cout << "The server mode is " + mode + "\n";
+	cout << "The port number passed in is " + std::to_string(portNumber) + "\n";
 	return 0;
 }
