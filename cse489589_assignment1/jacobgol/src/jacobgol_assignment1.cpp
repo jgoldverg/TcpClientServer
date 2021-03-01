@@ -22,6 +22,8 @@
  */
 #include <iostream>
 #include <stdio.h>
+#include <string>
+#include <stdlib.h>
 
 #include "../include/global.h"
 #include "../include/logger.h"
@@ -35,7 +37,7 @@ using namespace std;
  * @param  argv The argument list
  * @return 0 EXIT_SUCCESS
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	/*Init. Logger*/
 	cse4589_init_log(argv[2]);
@@ -44,6 +46,15 @@ int main(int argc, char **argv)
     fclose(fopen(LOGFILE, "w"));
 
 	/*Start Here*/
-	cout << "Hello";
+	/* In total we recieve two arguments from user 
+	1st arg is an s or a c. s= server mode, and c=client mode
+	2nd arg is the port number to listen on
+	*/
+	std::string programName = argv[0];
+	char mode = *argv[1];
+	int portNumber = atoi(argv[2]);
+	cout << programName << "\n";
+	cout << "The server mode is " + mode;
+	cout << "The port number passed in is " + std::to_string(portNumber);
 	return 0;
 }
