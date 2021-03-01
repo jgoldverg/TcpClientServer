@@ -51,10 +51,16 @@ int main(int argc, char *argv[])
 	2nd arg is the port number to listen on
 	*/
 	std::string programName = argv[0];
-	char mode = *argv[1];
 	int portNumber = atoi(argv[2]);
 	cout << programName << "\n";
-	cout << "The server mode is " + mode + '\n';
+	cout << argv[1];
 	cout << "The port number passed in is " + std::to_string(portNumber) + "\n";
+	if(*argv[1] == 'c'){
+		//now we enter client mode which is reach out a connection to the TCP server
+		cout << "We have entered client mode";
+	}else if(*argv[1] == 's'){
+		//now we start and enter server mode
+		cout << "We are now in server mode";
+	}
 	return 0;
 }
