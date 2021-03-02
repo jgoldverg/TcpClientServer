@@ -27,7 +27,7 @@
 
 #include "../include/global.h"
 #include "../include/logger.h"
-
+#include "../include/client.h"
 using namespace std;
 
 /**
@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
 	1st arg is an s or a c. s= server mode, and c=client mode
 	2nd arg is the port number to listen on
 	*/
+	const unsigned int backlog = 8; //this represents the amount of connections we wanna handle
 	std::string programName = argv[0];
 	int portNumber = atoi(argv[2]);
 	cout << programName << "\n";
